@@ -2,28 +2,24 @@ const express = require('express');
 const { createClient } = require('redis');
 const cors = require('cors');
 
-// Initialize the Express app
 const app = express();
 const PORT = 4203;
 
-// Enable CORS and JSON parsing middleware
 app.use(cors());
 app.use(express.json());
 
-// Create and connect to the Redis client
 const client = createClient({
-    url: 'redis://redis:6379' // Use the Redis container name and default port
+    url: 'redis://redis:6379' 
 });
 client.connect()
     .then(() => {
         console.log('Connected to Redis');
-        initializeCounter(); // Initialize the counter once connected
+        initializeCounter();
     })
     .catch(err => {
         console.error('Failed to connect to Redis:', err);
     });
 
-// Initialize the counter value in Redis
 async function initializeCounter() {
     try {
         const reply = await client.set('counter', 0, { NX: true });
@@ -35,10 +31,8 @@ async function initializeCounter() {
     }
 }
 
-// Initialize the counter on server start
 initializeCounter();
 
-// Endpoint to get the counter value
 app.get('/counter', async (req, res) => {
     try {
         const count = await client.get('counter');
@@ -49,7 +43,6 @@ app.get('/counter', async (req, res) => {
     }
 });
 
-// Endpoint to increment the counter
 app.post('/counter/increment', async (req, res) => {
     try {
         const newCount = await client.incr('counter');
@@ -60,7 +53,6 @@ app.post('/counter/increment', async (req, res) => {
     }
 });
 
-// Endpoint to reset the counter
 app.post('/counter/reset', async (req, res) => {
     try {
         await client.set('counter', 0);
@@ -71,7 +63,6 @@ app.post('/counter/reset', async (req, res) => {
     }
 });
 
-// Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });

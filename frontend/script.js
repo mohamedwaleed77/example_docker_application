@@ -1,4 +1,3 @@
- // Fetch and display the counter value on page load
  const fetchCounter = async () => {
     try {
         const response = await fetch('http://localhost:4203/counter');
@@ -8,8 +7,6 @@
         console.error('Error fetching counter:', error);
     }
 };
-
-// Increment the counter on button click
 document.getElementById('incrementButton').addEventListener('click', async () => {
     try {
         const response = await fetch('http://localhost:4203/counter/increment', {
@@ -21,7 +18,6 @@ document.getElementById('incrementButton').addEventListener('click', async () =>
         console.error('Error:', error);
     }
 });
-// Reset the counter on button click
 document.getElementById('resetButton').addEventListener('click', async () => {
     try {
         const response = await fetch('http://localhost:4203/counter/reset', {
@@ -34,6 +30,4 @@ document.getElementById('resetButton').addEventListener('click', async () => {
     }
 });
 
-
-// Call fetchCounter on page load
 fetchCounter();
