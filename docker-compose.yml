@@ -1,0 +1,32 @@
+networks:
+  app-network:
+    driver: bridge
+
+services:
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - app-network
+  
+  backend:
+    build: ./backend
+    container_name: my-backend-container
+    ports:
+      - "4203:4203"
+    depends_on:
+      - redis
+    networks:
+      - app-network
+  
+  frontend:
+    build: ./frontend
+    container_name: my-frontend-container
+    depends_on:
+      -  backend
+    ports:
+      - "5050:8080"
+    networks:
+      - app-network
