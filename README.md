@@ -13,10 +13,14 @@ Init sys:		runnit
 Introduction:
 I’ve made special application for this project which is a website that counts number of clicks
 Due to limited resources it was crucial to use runnit system and lightweight distro
-the options were :
-Devuan 	: rejected because of systemd.
-Void		: rejected due to complexity.
-Antix		: accepted because it’s debian based (easy to use) & init system is not systemd
+
+The options were :
+
+Devuan: rejected because of systemd.
+
+Void: rejected due to complexity.
+
+Antix: accepted because it’s debian based (easy to use) & init system is not systemd
 
 
 redis port=6379:6379    redis default port
