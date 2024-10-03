@@ -13,3 +13,34 @@ usage: docker compose up
 
 
 ![image4](https://github.com/user-attachments/assets/b964a18f-89c7-4978-8531-208cd6fb8ec7)
+
+
+# Project Deliverables: 
+Jenkins and Docker environments installed and configured.
+
+Dockerized application running locally.
+
+Basic Ansible setup
+
+CI/CD pipeline plan documented
+
+Jenkins job that builds Docker images.
+
+Automated testing included in the pipeline.
+
+Notifications configured for pipeline updates.
+
+Ansible playbooks ready and tested.
+
+Docker images automatically pushed to Docker Hub or a registry. 
+
+Successful deployment of the application to a Vm.. 
+
+Fully refined CI/CD pipeline in Jenkins.
+
+Documented CI/CD pipeline process.
+
+Final deployment verified and tested on the Vms
+
+Working Jenkins pipeline triggered by Git commits.
+
