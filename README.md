@@ -1,6 +1,8 @@
 # example_docker_application
-redis port=6379:6379    redis default port
-frontend port=5050:8080 or whatever I mapped it like that to be able to use jenkins on its default port 
+redis port=6379:6379 (redis default port)
+
+frontend port=5050:8080 (or whatever,I mapped it like that to be able to use jenkins on its default port)
+
 backend port=4203:4203  
 
 usage: docker compose up
