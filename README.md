@@ -7,7 +7,6 @@ backend port=4203:4203
 
 usage: docker compose up
 
-usage: docker compose up
 
 ![image2 - Copy](https://github.com/user-attachments/assets/2419bff5-04d3-40e6-b41e-5b2501e3300d)
 
