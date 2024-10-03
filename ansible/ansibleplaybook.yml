@@ -2,7 +2,7 @@
   hosts: webservers
   become: yes
   tasks:
-
+  
     - name: Install dependencies
       apt:
         name:
