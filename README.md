@@ -43,3 +43,11 @@ usage: docker compose up
 
 -Working Jenkins pipeline triggered by Git commits.
 
+# what i've done in this project :
+•	Divided this application into two main folders to test each one separately (Frontend & Backend).
+•	Used Redis Docker image as the database for this application.
+•	Wrote Dockerfiles to run frontend and backend.
+•	Wrote Docker-compose.yml file to build frontend, backend images and run Redis image in order (according to their dependencies).
+•	Pushed the application directory to Github private repository using SSH agent.
+•	Configured Jenkins pipeline item to clone and test this private repository automatically triggered by commits.
+•	Configured Ansible playbook to install dependencies, copy the cloned repository , deploy it to targeted machines.
