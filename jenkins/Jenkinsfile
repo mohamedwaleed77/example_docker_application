@@ -56,14 +56,14 @@ pipeline {
                     sh 'sudo docker push mohamedwaleed77/counter:backend'
                 }
             }
-            mail to: '203659.msa@gmail.com',
+            mail to: 'example@gmail.com',
                  subject: "SUCCESS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
                  body: "Good news! Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' has succeeded.\nCheck it here: ${env.BUILD_URL}"
         }
 
         failure {
             echo 'Deployment failed!'
-            mail to: '203659.msa@gmail.com',
+            mail to: 'example@gmail.com',
                  subject: "FAILURE: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
                  body: "Unfortunately, Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' has failed.\nCheck it here: ${env.BUILD_URL}"
         }
